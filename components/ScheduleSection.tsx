@@ -1,20 +1,34 @@
+
 import { PixelCalendar, PixelLocationPin, PixelUser } from "@/components/PixelIcons";
 
 // All copy lives here, so converting the section later is a one-place edit
 const CONTENT = {
-  label: "Schedule",
-  heading: ["When, Where, and Who", "can participate"],
-  body: "Three days of insight, connection, and ideas that shape the future of sustainable tech.",
+  label: "What We Do",
+  heading: ["A community built", "around the future of AI"],
+  body: "Bringing Odisha's AI enthusiasts together to learn, experiment, collaborate, and contribute to the future of artificial intelligence.",
+
   items: [
-    { icon: PixelCalendar, question: "When?", answer: ["1st July - 3rd July, 2026"] },
-    { icon: PixelLocationPin, question: "Where?", answer: ["Los Angeles, California"] },
-    { icon: PixelUser, question: "Who can join?", answer: ["Founders &", "Leaders"] },
+    {
+      icon: PixelCalendar,
+      question: "Learn & Explore",
+      answer: ["Discover", "AI Together"],
+    },
+    {
+      icon: PixelLocationPin,
+      question: "Build & Contribute",
+      answer: ["Create", "Real Impact"],
+    },
+    {
+      icon: PixelUser,
+      question: "Connect & Collaborate",
+      answer: ["Grow As", "A Community"],
+    },
   ],
 };
 
 export default function ScheduleSection() {
   return (
-    <section id="schedule" className="w-full bg-cream px-5 py-16 md:px-10 md:py-24 xl:px-[60px] xl:py-[100px]">
+    <section id="what-we-do" className="w-full bg-cream px-5 py-16 md:px-10 md:py-24 xl:px-[60px] xl:py-[100px]">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8 lg:grid lg:grid-cols-[40%_60%] lg:gap-0">
         <p className="font-display text-[32px] font-normal uppercase leading-none tracking-[-0.02em] text-brown">
           {CONTENT.label}

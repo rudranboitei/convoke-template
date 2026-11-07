@@ -1,68 +1,81 @@
+
 import AgendaTabs from "@/components/AgendaTabs";
 
-// All copy lives here, so converting the section later is a one-place edit
-const SESSIONS = [
+// Community pathways inspired by Odisha AI's initiatives
+const LEARN_SESSIONS = [
   {
-    title: "Opening keynote",
-    body: "The architects of tomorrow take the stage. A rare moment where the people shaping technology share what they're building right now, unfiltered and direct.",
-    time: "09:00 AM - 10:00 AM",
+    title: "AI Foundation Series",
+    body: "Build a strong understanding of artificial intelligence, from linear algebra and statistics to neural networks, machine learning, and transformers.",
+    time: "LEARNING",
   },
   {
-    title: "The Future of AI in Everyday Products",
-    body: "Explore how AI is transforming digital experiences & what it means for product teams.",
-    time: "10:30 AM – 11:30 AM",
+    title: "AI/ML Lecture Series",
+    body: "Explore machine learning concepts, emerging research, and practical applications through knowledge-sharing sessions.",
+    time: "RESEARCH",
   },
   {
-    title: "Designing for a Sustainable Planet",
-    body: "A look at how climate-conscious thinking is reshaping product design, from materials to manufacturing.",
-    time: "01:00 PM – 02:00 PM",
-  },
-];
-
-// Placeholder sessions for Days 2 and 3 (the Framer template only ships Day 1). Replace with real ones.
-const DAY_2_SESSIONS = [
-  {
-    title: "Workshop: Building with AI",
-    body: "A hands-on session where teams prototype real features with the latest AI tools, from first prompt to working demo.",
-    time: "09:30 AM - 11:00 AM",
-  },
-  {
-    title: "Sustainable Tech in Practice",
-    body: "Case studies from teams that cut emissions without slowing down, and the trade-offs they had to make.",
-    time: "11:30 AM – 12:30 PM",
-  },
-  {
-    title: "Investor Fireside Chat",
-    body: "Investors share what they look for in early-stage companies, and the mistakes they see founders repeat.",
-    time: "02:00 PM – 03:00 PM",
+    title: "AI/ML Summer School",
+    body: "Explore hands-on AI and machine learning learning opportunities, develop practical skills, and connect with fellow learners.",
+    time: "HANDS-ON",
   },
 ];
 
-const DAY_3_SESSIONS = [
+const BUILD_SESSIONS = [
   {
-    title: "Product Teardown Live",
-    body: "Designers and engineers pick apart real products on stage, and explain what they would change.",
-    time: "10:00 AM - 11:00 AM",
+    title: "Rathathon",
+    body: "A continuous hackathon focused on building real-world AI applications. Bring an idea, experiment with technology, and turn it into something useful.",
+    time: "ONGOING",
   },
   {
-    title: "Community Networking Hour",
-    body: "An open session to meet speakers, trade contacts, and find collaborators for what comes next.",
-    time: "12:00 PM – 01:00 PM",
+    title: "Odia Generative AI",
+    body: "Explore generative AI and large language models for Odia and other Indic languages, helping make AI more accessible through local languages.",
+    time: "LANGUAGE AI",
   },
   {
-    title: "Closing Keynote: What Comes Next",
-    body: "The final word on where technology and sustainability are heading, and how to take the ideas home.",
-    time: "03:30 PM – 04:30 PM",
+    title: "OpenOdia",
+    body: "Contribute to open-source Odia language technology through Python tools for transliteration, tokenization, dictionaries, and more.",
+    time: "OPEN SOURCE",
+  },
+];
+
+const CONTRIBUTE_SESSIONS = [
+  {
+    title: "Build for Odia Languages",
+    body: "Help improve language technology by contributing datasets, language resources, research, and tools for Odia and other Indic languages.",
+    time: "CONTRIBUTE",
+  },
+  {
+    title: "Share Knowledge & Research",
+    body: "Share what you're learning, publish your work, exchange ideas, and help others explore artificial intelligence.",
+    time: "COLLABORATE",
+  },
+  {
+    title: "Connect Through Conferences",
+    body: "Take part in AI conferences and community discussions that bring together researchers, developers, educators, and AI enthusiasts.",
+    time: "COMMUNITY",
   },
 ];
 
 const CONTENT = {
-  heading: "What’s Happening and When",
-  body: "Three days of ideas, conversations, and connections shaping the future of technology and sustainability.",
+  heading: "Explore the AI ecosystem",
+  body: "From learning the fundamentals to building real-world solutions, discover how you can be part of Odisha's AI journey.",
+
   days: [
-    { id: "day-1", label: "1st July, 2027", sessions: SESSIONS },
-    { id: "day-2", label: "2nd July, 2027", sessions: DAY_2_SESSIONS },
-    { id: "day-3", label: "3rd July, 2027", sessions: DAY_3_SESSIONS },
+    {
+      id: "learn",
+      label: "Learn & Explore",
+      sessions: LEARN_SESSIONS,
+    },
+    {
+      id: "build",
+      label: "Build & Experiment",
+      sessions: BUILD_SESSIONS,
+    },
+    {
+      id: "contribute",
+      label: "Connect & Contribute",
+      sessions: CONTRIBUTE_SESSIONS,
+    },
   ],
 };
 
@@ -73,7 +86,6 @@ export default function AgendaSection() {
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-[60px] lg:grid lg:grid-cols-[40%_60%] lg:gap-0">
         {/* Left: heading + copy */}
         <div className="flex flex-col gap-2.5 md:gap-5">
-          {/* 40px on one line at phone widths (scales down on small phones), 64px from tablet up */}
           <h2 className="max-w-[500px] font-display text-[clamp(30px,8.2vw,40px)] font-normal uppercase leading-none tracking-[-0.02em] text-forest md:text-[64px]">
             {CONTENT.heading}
           </h2>
@@ -82,7 +94,7 @@ export default function AgendaSection() {
           </p>
         </div>
 
-        {/* Right: day tabs + timeline (client component) */}
+        {/* Right: community pathways + timeline */}
         <AgendaTabs days={CONTENT.days} />
       </div>
     </section>

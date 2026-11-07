@@ -45,7 +45,7 @@ export default function Hero() {
           <div className="flex flex-col items-center gap-3 text-base text-lime md:flex-row md:gap-x-10 md:text-lg xl:text-xl">
             <p className="flex items-center gap-3 font-sans">
               <MapPin className="size-6" strokeWidth={1.5} aria-hidden="true" />
-              Los Angeles
+              Odisha, India
             </p>
             <p className="flex items-center gap-3 font-sans">
               <CalendarDays className="size-6" strokeWidth={1.5} aria-hidden="true" />
@@ -55,17 +55,16 @@ export default function Hero() {
 
           {/* 3 lines on mobile and desktop, 2 lines on tablet ("arrives in person" joins up) */}
           <h1 className="font-display text-[clamp(56px,15.5vw,126px)] font-normal uppercase leading-none tracking-[-0.02em] text-lime md:text-[clamp(80px,10vw,126px)]">
-            <span className="block">The future</span>
-            <span className="block md:max-xl:inline">arrives</span>{" "}
-            <span className="block md:max-xl:inline">in person</span>
+            <span className="block">Unite Odisha's</span>
+            <span className="block md:max-xl:inline">AI Builders</span>{" "}
+            <span className="block md:max-xl:inline">Today</span>
           </h1>
         </div>
 
         {/* Right: copy + CTAs */}
         <div className="flex w-full flex-col items-center gap-8 md:max-w-172.5 md:items-start xl:flex-1">
           <p className="max-w-85 font-sans text-lg font-medium leading-6.5 tracking-[-0.02em] text-lime md:max-w-none md:text-2xl md:leading-8.5">
-            An immersive exploration of technology, artificial intelligence, and human potential.
-            Join the world&apos;s most visionary builders.
+            A growing community of people from Odisha exploring, building, and contributing to artificial intelligence. Share what you learn, collaborate on ideas, build open-source projects, and help put Odisha on the AI map.
           </p>
 
           {/* Full-width stacked buttons on mobile, side by side from tablet up */}

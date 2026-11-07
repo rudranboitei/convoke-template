@@ -1,46 +1,42 @@
+
 import Link from "next/link";
 
 import { buttonVariants } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { cn } from "@/lib/utils";
-import { Countdown } from "./countdown";
-
 
 // All copy lives here so the section is a one-place edit
 const CONTENT = {
-  heading: "Book your spot now",
-  body: "When you book your ticket to Convoke, you're not just attending an event — you're joining a movement that celebrates design, innovation, and collaboration at scale.",
-  cta: { label: "Buy ticket now", href: "/#tickets" },
-  // Countdown target (ISO string). Change this to your event start.
-  eventDate: "2027-01-30T18:00:00+05:30",
+  heading: "Let's build the future of AI together.",
+  body: "Odisha's AI community brings together developers, researchers, students, and curious minds to learn, experiment, share knowledge, contribute to open source, and build meaningful AI solutions together.",
+  cta: { label: "Join the Community", href: "/#join-community" },
   columns: [
     {
-      title: "Quick Links",
+      title: "Community",
       links: [
-        { label: "About", href: "/#about" },
-        { label: "Agenda", href: "/#agenda" },
-        { label: "Speakers", href: "/#speakers" },
-        { label: "Journal", href: "/blog" },
-        { label: "Contact Us", href: "/contact" },
+        { label: "Conferences", href: "/conferences" },
+        { label: "Initiatives", href: "/initiatives" },
+        { label: "Resources", href: "/resources" },
+        { label: "About Us", href: "/about" },
       ],
     },
     {
-      title: "Policy",
+      title: "Resources",
       links: [
-        { label: "Code Of Conduct", href: "/policy/code-of-conduct" },
+        { label: "Community Guidelines", href: "/policy/code-of-conduct" },
         { label: "Terms Of Service", href: "/policy/terms-of-service" },
       ],
     },
     {
-      title: "Social",
+      title: "Connect",
       links: [
         { label: "LinkedIn", href: "https://linkedin.com", external: true },
         { label: "X (Twitter)", href: "https://x.com", external: true },
-        { label: "Facebook", href: "https://facebook.com", external: true },
+        { label: "GitHub", href: "https://github.com", external: true },
       ],
     },
   ],
-  copyright: "© 2026 Convoke. All rights reserved.",
+  copyright: "© 2026 Odisha AI. Built by the community, for the community.",
 };
 
 // Pixel-style right arrow (pixelarticons "arrow-right")
@@ -56,16 +52,16 @@ export default function CtaFooterSection() {
   return (
     <footer
       id="book"
-      className="w-full bg-[#22382B] px-5 pb-10 pt-16 text-[#FFFF64] md:px-10 md:pt-20 xl:px-[60px] xl:pt-[100px]"
+      className="w-full bg-forest px-5 pb-10 pt-16 text-lime md:px-10 md:pt-20 xl:px-15 xl:pt-25"
     >
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col items-center">
+      <div className="mx-auto flex w-full max-w-360 flex-col items-center">
         {/* CTA */}
         <div className="flex flex-col items-center gap-10 text-center">
           <div className="flex flex-col items-center gap-1">
             <h2 className="font-display text-[clamp(36px,8vw,64px)] font-normal uppercase leading-none tracking-[-0.02em]">
               {CONTENT.heading}
             </h2>
-            <p className="max-w-[880px] font-sans text-lg font-medium leading-[25px] tracking-[-0.02em] lg:text-2xl lg:leading-[34px]">
+            <p className="max-w-220 font-sans text-lg font-medium leading-6.25 tracking-[-0.02em] lg:text-2xl lg:leading-8.5">
               {CONTENT.body}
             </p>
           </div>
@@ -75,22 +71,21 @@ export default function CtaFooterSection() {
               href={CONTENT.cta.href}
               className={cn(
                 buttonVariants(),
-                "h-16 gap-3 rounded-[2px] bg-[#FFFF64] px-6 font-display text-2xl font-normal uppercase leading-none tracking-[0.04em] text-[#22382B] hover:bg-[#FFFF64]/90"
+                "h-16 gap-3 rounded-xs bg-lime px-6 font-display text-2xl font-normal uppercase leading-none tracking-[0.04em] text-forest hover:bg-lime/90"
               )}
             >
               {CONTENT.cta.label}
               <ArrowRight />
             </Link>
-            <Countdown target={CONTENT.eventDate} />
           </div>
         </div>
 
-        <Separator className="mt-20 h-px bg-[#FFFF64]/20" />
+        <Separator className="mt-20 h-px bg-lime/20" />
 
         {/* Link columns: stacked on mobile, 3 equal columns on desktop */}
         <nav
           aria-label="Footer"
-          className="grid w-full grid-cols-1 gap-10 py-10 text-center lg:grid-cols-3 lg:gap-[42px] lg:items-start"
+          className="grid w-full grid-cols-1 gap-10 py-10 text-center lg:grid-cols-3 lg:gap-10.5 lg:items-start"
         >
           {CONTENT.columns.map((col) => (
             <div key={col.title} className="flex flex-col items-center gap-3">
@@ -105,7 +100,7 @@ export default function CtaFooterSection() {
                       {...("external" in l && l.external
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
-                      className="font-sans text-base font-semibold leading-[1.2] tracking-[-0.02em] text-[#FFFF64]/80 transition-colors hover:text-[#FFFF64]"
+                      className="font-sans text-base font-semibold leading-[1.2] tracking-[-0.02em] text-lime/80 transition-colors hover:text-lime"
                     >
                       {l.label}
                     </Link>
@@ -116,9 +111,9 @@ export default function CtaFooterSection() {
           ))}
         </nav>
 
-        <Separator className="h-px bg-[#FFFF64]/20" />
+        <Separator className="h-px bg-lime/20" />
 
-        <p className="pt-5 text-center font-sans text-sm leading-[1.3] text-[#FFFF64]">
+        <p className="pt-5 text-center font-sans text-sm leading-[1.3] text-lime">
           {CONTENT.copyright}
         </p>
       </div>

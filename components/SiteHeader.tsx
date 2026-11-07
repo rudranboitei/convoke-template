@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
-
+import Image from "next/image";
 import TicketButton from "@/components/TicketButton";
 import { Button } from "@/components/ui/button";
 
@@ -25,13 +25,23 @@ function Logo() {
   );
 }
 
+
 function Brand({ onClick }: { onClick?: () => void }) {
   return (
-    <Link href="/" onClick={onClick} className="flex items-center gap-2.5" aria-label="Convoke home">
-      <Logo />
-      <span className="font-sans text-[22px] font-medium uppercase leading-[1.2] tracking-[-0.02em] text-lime">
-        Convoke
-      </span>
+    <Link
+      href="/"
+      onClick={onClick}
+      className="flex items-center gap-2.5"
+      aria-label="Convoke home"
+    >
+      <Image
+        src="/logo.svg"
+        alt="Convoke"
+        width={150}
+        height={40}
+        priority
+        className="h-10 w-auto object-contain"
+      />
     </Link>
   );
 }
