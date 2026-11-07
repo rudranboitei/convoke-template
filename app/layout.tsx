@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Albert_Sans, Anton } from "next/font/google";
 
 import "./globals.css";
@@ -23,6 +23,12 @@ const anton = Anton({
 export const metadata: Metadata = {
   title: "Convoke",
   description: "Convoke event",
+};
+
+// Browser status/address bar color. Same value as --color-forest in globals.css.
+// (Metadata can't read CSS variables, so the hex is repeated here.)
+export const viewport: Viewport = {
+  themeColor: "#22382b",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
