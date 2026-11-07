@@ -4,6 +4,7 @@ import { Albert_Sans, Anton } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/SiteHeader";
 import SmoothScroll from "@/components/SmoothScroll";
+import CtaFooterSection from "@/components/cta-footer-section";
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           {children}
         </SmoothScroll>
+        <CtaFooterSection />
       </body>
     </html>
   );

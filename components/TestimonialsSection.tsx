@@ -40,11 +40,12 @@ export default function TestimonialsSection() {
     // No overflow-hidden on this section or any ancestor: it would break position: sticky
     <section
       id="testimonials"
-      className="w-full bg-[#F5F2EC] px-5 py-16 text-[#41351E] md:px-10 md:py-24 lg:pb-[68px] lg:pt-[100px] xl:px-[60px]"
+      className="w-full bg-[#F5F2EC] px-6 py-16 text-[#41351E] md:px-10 md:py-24 lg:pb-[68px] lg:pt-[100px] xl:px-[60px]"
     >
       <div className="mx-auto w-full max-w-[1440px]">
-        {/* Heading: pinned on desktop. Opaque and above the rows, so they slide underneath it. */}
-        <div className="z-20 flex flex-col gap-1 bg-[#F5F2EC] pb-12 lg:sticky lg:top-0 lg:pb-14 lg:pt-5">
+        {/* Heading: pinned on desktop, but z-0 keeps it BELOW the rows,
+            so the last card slides up over it (see z-10 on the rows). */}
+        <div className="z-0 flex flex-col gap-1 bg-[#F5F2EC] pb-12 lg:sticky lg:top-0 lg:pb-14 lg:pt-5">
           <h2 className="font-display text-[clamp(40px,9vw,64px)] font-normal uppercase leading-none tracking-[-0.02em]">
             {CONTENT.heading.map((line) => (
               <span key={line} className="block">
@@ -52,17 +53,18 @@ export default function TestimonialsSection() {
               </span>
             ))}
           </h2>
-          <p className="font-sans text-xl font-medium leading-7 tracking-[-0.02em] lg:text-2xl lg:leading-[34px]">
+          <p className="max-w-[300px] font-sans text-xl font-medium leading-7 tracking-[-0.02em] md:max-w-none lg:text-2xl lg:leading-[34px]">
             {CONTENT.body}
           </p>
         </div>
 
-        {/* Rows: each is sticky and opaque, so the next one covers the previous */}
+        {/* Rows: each is sticky, opaque and z-10, so the next one covers the previous
+            and all of them cover the heading when they scroll up */}
         <ul>
           {CONTENT.items.map((t) => (
             <li
               key={t.name}
-              className={`border-t border-[#41351E] bg-[#F5F2EC] py-8 lg:sticky ${t.stick}`}
+              className={`z-10 border-t border-[#41351E] bg-[#F5F2EC] py-8 lg:sticky ${t.stick}`}
             >
               <div className="grid grid-cols-1 gap-6 lg:grid-cols-[33fr_18fr_49fr] lg:gap-0">
                 {/* Name + role */}
@@ -76,18 +78,18 @@ export default function TestimonialsSection() {
                 </div>
 
                 {/* Portrait (beige backdrop shows behind the cut-out) */}
-                <div className="relative aspect-[13/16] w-full max-w-[260px] bg-[#EAE4D7]">
+                <div className="relative aspect-[13/16] w-full bg-[#EAE4D7] lg:max-w-[260px]">
                   <Image
                     src={`${BASE}/${t.img}.png`}
                     alt=""
                     fill
-                    sizes="260px"
+                    sizes="(min-width: 1024px) 260px, 100vw"
                     className="object-cover"
                   />
                 </div>
 
                 {/* Quote */}
-                <p className="max-w-[665px] text-pretty font-sans text-xl font-medium leading-7 tracking-[-0.02em] lg:pl-10 lg:text-2xl lg:leading-[34px]">
+                <p className="mt-4 max-w-[360px] text-pretty font-sans text-xl font-medium leading-7 tracking-[-0.02em] md:max-w-[665px] lg:mt-0 lg:pl-10 lg:text-2xl lg:leading-[34px]">
                   {t.quote}
                 </p>
               </div>
