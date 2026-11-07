@@ -15,7 +15,7 @@ export default function Hero() {
       {/* BG image + green duotone + top/bottom fades */}
       <div className="absolute inset-0 -z-10" aria-hidden="true">
         <Image
-          src="https://framerusercontent.com/images/RZmKTiTmcDQStSRNVpYxi4aSoEE.png"
+          src="/hero.png"
           alt=""
           fill
           priority
