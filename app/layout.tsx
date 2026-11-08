@@ -23,6 +23,18 @@ const anton = Anton({
 export const metadata: Metadata = {
   title: "Convoke",
   description: "Convoke event",
+  icons: {
+    icon: [
+      { url: "/favicon-light.ico", sizes: "any" },
+      { url: "/favicon-light.svg", type: "image/svg+xml" },
+      { url: "/favicon-light-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/favicon-light.ico",
+    apple: [
+      { url: "/favicon-light-180.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
 };
 
 // Browser status/address bar color. Same value as --color-forest in globals.css.

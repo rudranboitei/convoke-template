@@ -1,0 +1,21 @@
+{
+  "name": "Convoke",
+  "short_name": "Convoke",
+  "description": "Convoke event",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#22382b",
+  "theme_color": "#22382b",
+  "icons": [
+    {
+      "src": "/favicon-light-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-light-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

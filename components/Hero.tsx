@@ -4,6 +4,7 @@ import { CalendarDays, MapPin } from "lucide-react";
 
 import TicketButton from "@/components/TicketButton";
 import { Button } from "@/components/ui/button";
+import TodayDate from "./TodayDate";
 
 export default function Hero() {
   return (
@@ -49,13 +50,13 @@ export default function Hero() {
             </p>
             <p className="flex items-center gap-3 font-sans">
               <CalendarDays className="size-6" strokeWidth={1.5} aria-hidden="true" />
-              <time dateTime="2026-07-01/2026-07-03">1st – 3rd July, 2026</time>
+              <TodayDate />
             </p>
           </div>
 
           {/* 3 lines on mobile and desktop, 2 lines on tablet ("arrives in person" joins up) */}
           <h1 className="font-display text-[clamp(56px,15.5vw,126px)] font-normal uppercase leading-none tracking-[-0.02em] text-lime md:text-[clamp(80px,10vw,126px)]">
-            <span className="block">Unite Odisha's</span>
+            <span className="block">Unite Odisha&apos;s</span>
             <span className="block md:max-xl:inline">AI Builders</span>{" "}
             <span className="block md:max-xl:inline">Today</span>
           </h1>

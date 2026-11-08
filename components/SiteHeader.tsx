@@ -8,22 +8,11 @@ import TicketButton from "@/components/TicketButton";
 import { Button } from "@/components/ui/button";
 
 const NAV_LINKS = [
-  { label: "About", href: "/#about" },
-  { label: "Agenda", href: "/#agenda" },
-  { label: "Speakers", href: "/#speakers" },
-  { label: "FAQs", href: "/#faqs" },
-  { label: "Journal", href: "/blog" },
+  { label: "Conferences", href: "/conferences" },
+  { label: "Initiatives", href: "/initiatives" },
+  { label: "Resources", href: "/resources" },
+  { label: "About Us", href: "/about" },
 ] as const;
-
-function Logo() {
-  // Placeholder mark. Replace the <path> with the real SVG from the original
-  // (inspect -> copy the <symbol id="svg10923692206"> contents).
-  return (
-    <svg viewBox="0 0 42 30" aria-hidden="true" className="h-[30px] w-[42px] shrink-0 fill-lime">
-      <path d="M12 0h18a12 12 0 0 1 12 12v0a8 8 0 0 1-6 7.7L42 30H30l-5-9H18l-6 9H0L10 0h2Zm8 7-3 6h13a3 3 0 0 0 0-6H20Z" />
-    </svg>
-  );
-}
 
 
 function Brand({ onClick }: { onClick?: () => void }) {

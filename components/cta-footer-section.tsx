@@ -23,8 +23,8 @@ const CONTENT = {
     {
       title: "Resources",
       links: [
-        { label: "Community Guidelines", href: "/policy/code-of-conduct" },
-        { label: "Terms Of Service", href: "/policy/terms-of-service" },
+        { label: "Community Guidelines", href: "/code-of-conduct" },
+        { label: "Terms Of Service", href: "/terms-of-service" },
       ],
     },
     {
